@@ -33,6 +33,14 @@ const session = statelessSessions({
   secret: sessionSecret,
 });
 
+const images = {
+  upload: "local",
+  local: {
+    storagePath: "public/files",
+    baseUrl: "/public/files",
+  },
+};
+
 export default withAuth(
   config({
     db: {
@@ -44,5 +52,6 @@ export default withAuth(
     },
     lists,
     session,
+    images
   })
 );

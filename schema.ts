@@ -5,6 +5,7 @@ import {
   password,
   timestamp,
   select,
+  image
 } from '@keystone-next/fields';
 import { document } from '@keystone-next/fields-document';
 
@@ -69,6 +70,7 @@ export const lists = createSchema({
         },
         many: true,
       }),
+      image: image(),
     },
   }),
   Tag: list({
