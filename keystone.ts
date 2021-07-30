@@ -46,8 +46,7 @@ export default withAuth(
     db: {
       adapter: "prisma_postgresql",
       url:
-        process.env.DATABASE_URL ||
-        "postgres://gnyrwnejafxnvz:533325d2f0ac1398f2e6c4fb3c2abbe033173ac26f52f35861160b48b89d868a@ec2-54-155-208-5.eu-west-1.compute.amazonaws.com:5432/d94tl852prmp1h",
+        process.env.DATABASE_URL,
     },
     ui: {
       isAccessAllowed: (context) => !!context.session?.data,
@@ -57,7 +56,7 @@ export default withAuth(
     images: {
       upload: "local",
       local: {
-        storagePath: "pub/images",
+        storagePath: "public/images",
         baseUrl: "/images",
       },
     },
